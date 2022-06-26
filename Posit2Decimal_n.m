@@ -27,11 +27,15 @@ k = 1;
 
 for c = 1:n-2
   check = bitget(P,(n-1)-c);
-  if check ~= Rk_1
+  if check ~= Rk_1 || c == n-2
       bits = bits - c;
       break
   end
   k = k + 1;
+end
+
+if check == Rk_1
+    k = k+1;
 end
 
 if Rk_1 == 0
